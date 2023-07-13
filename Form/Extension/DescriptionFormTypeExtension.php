@@ -18,6 +18,7 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
 
 class DescriptionFormTypeExtension extends AbstractTypeExtension
 {
@@ -62,6 +63,11 @@ class DescriptionFormTypeExtension extends AbstractTypeExtension
      */
     public function getExtendedType()
     {
-        return LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\FormType');
+        return LegacyFormHelper::getType(FormType::class);
+    }
+
+    public static function getExtendedTypes(): array
+    {
+        return [FormType::class];
     }
 }
