@@ -206,7 +206,7 @@ class ApiDocExtractor
                 $method = $matches[2];
             }
 
-            if ($this->container->has($controller)) {
+            if (is_string($controller) && $this->container->has($controller)) {
                 // BC SF < 3.0
                 if (method_exists($this->container, 'enterScope')) {
                     $this->container->enterScope('request');
