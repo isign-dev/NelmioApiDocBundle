@@ -3,10 +3,10 @@
 namespace Nelmio\ApiDocBundle\Twig\Extension;
 
 use Michelf\MarkdownExtra;
-use Symfony\Bundle\TwigBundle\DependencyInjection\TwigExtension;
+use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 
-class MarkdownExtension extends TwigExtension
+class MarkdownExtension extends AbstractExtension
 {
     protected $markdownParser;
 
